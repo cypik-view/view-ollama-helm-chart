@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Package
 metadata:
   name: view-ollama-helm-chart
-  version: 1.0.0
+  version: 0.1.0
   description: A Helm chart for deploying Ollama on Kubernetes.
   keywords:
     - ollama
