@@ -9,6 +9,7 @@ entries:
     name: view-ollama
     type: application
     urls:
-    - https://github.com/cypik-view/view-ollama-helm-chart.git/view-ollama-0.1.0.tgz
+    -  https://cypik-view.github.io/view-ollama-helm-chart/charts/view-ollama-0.1.0.tgz
+
     version: 0.1.0
 generated: "2025-02-11T14:59:09.186898943+05:30"
