@@ -1,3 +1,14 @@
 apiVersion: v1
-entries: {}
-generated: "2025-02-11T15:28:32.410367287+05:30"
+entries:
+  view-ollama:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-11T15:34:51.065027928+05:30"
+    description: A Helm chart for Kubernetes
+    digest: bdf7d3d50d187e5607f56b1879835206b00230b2cdcb2e368bee63a34a414dee
+    name: view-ollama
+    type: application
+    urls:
+    - https://cypik-view.github.io/view-ollama-helm-chart/charts/view-ollama-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-02-11T15:34:51.064281431+05:30"
