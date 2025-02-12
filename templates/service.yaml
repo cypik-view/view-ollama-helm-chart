@@ -7,9 +7,10 @@ spec:
     app: ollama-cpu
   ports:
     - protocol: TCP
-      port: 11434
-      targetPort: 11434
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
 ---
+  {{- if .Values.ollamaGPU.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -19,5 +20,6 @@ spec:
     app: ollama-gpu
   ports:
     - protocol: TCP
-      port: 11434
-      targetPort: 11434
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
+  {{- end }}

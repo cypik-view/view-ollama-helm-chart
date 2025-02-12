@@ -8,9 +8,7 @@ spec:
   resources:
     requests:
       storage: {{ .Values.ollama.pvcSize }}
-  storageClassName: "standard"
-
-
+  storageClassName: "{{ .Values.pvc.storageClassName }}"
 
 ---
 apiVersion: v1
@@ -23,4 +21,4 @@ spec:
   resources:
     requests:
       storage: {{ .Values.ollama.pvcSize }}
-  storageClassName: "standard"
+  storageClassName: "{{ .Values.pvc.storageClassName }}"

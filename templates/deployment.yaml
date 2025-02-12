@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ollama-cpu
 spec:
-  replicas: 1
+  replicas: {{ .Values.ollama.replicas }}
   selector:
     matchLabels:
       app: ollama-cpu
@@ -23,14 +23,14 @@ spec:
           persistentVolumeClaim:
             claimName: ollama-cpu-pvc
       restartPolicy: Always
-
 ---
+  {{- if .Values.ollamaGPU.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ollama-gpu
 spec:
-  replicas: 1
+  replicas: {{ .Values.ollamaGPU.replicas }}
   selector:
     matchLabels:
       app: ollama-gpu
@@ -44,7 +44,7 @@ spec:
           image: {{ .Values.ollama.image }}
           env:
             - name: NVIDIA_VISIBLE_DEVICES
-              value: all
+              value: "{{ .Values.ollamaGPU.NVIDIA_VISIBLE_DEVICES }}"
           volumeMounts:
             - mountPath: {{ .Values.ollama.volumePath }}
               name: ollama-gpu-volume
@@ -59,3 +59,4 @@ spec:
           persistentVolumeClaim:
             claimName: ollama-gpu-pvc
       restartPolicy: Always
+  {{- end }}

@@ -1,6 +1,0 @@
-ollama:
-  image: "ollama/ollama"
-  volumePath: "/root/.ollama"
-  pvcSize: "1Gi" # Size of the PVC
-ollamaGPU:
-  NVIDIA_VISIBLE_DEVICES: "all"
